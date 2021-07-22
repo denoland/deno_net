@@ -33,7 +33,9 @@ pretty-printed diff of failing assertion.
   string.
 - `assertThrowsAsync()` - Expects the passed `fn` to be async and throw (or
   return a `Promise` that rejects). If the `fn` does not throw or reject, this
-  function will throw asynchronously. Also compares any errors thrown to an
+  function will throw asynchronously _(⚠️ assertion should be awaited or be the
+  return value of the test function to avoid any uncaught rejections which could
+  result in unexpected process exit)_. Also compares any errors thrown to an
   optional expected `Error` class and checks that the error `.message` includes
   an optional string.
 - `unimplemented()` - Use this to stub out methods that will throw when invoked.

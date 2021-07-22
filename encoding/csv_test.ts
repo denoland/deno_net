@@ -472,14 +472,20 @@ for (const t of testCases) {
       }
       let actual;
       if (t.Error) {
-        const err = await assertThrowsAsync(async () => {
-          await readMatrix(new BufReader(new StringReader(t.Input ?? "")), {
-            separator,
-            comment: comment,
-            trimLeadingSpace: trim,
-            fieldsPerRecord: fieldsPerRec,
-            lazyQuotes: lazyquote,
-          });
+        let err;
+        await assertThrowsAsync(async () => {
+          try {
+            await readMatrix(new BufReader(new StringReader(t.Input ?? "")), {
+              separator,
+              comment: comment,
+              trimLeadingSpace: trim,
+              fieldsPerRecord: fieldsPerRec,
+              lazyQuotes: lazyquote,
+            });
+          } catch (e) {
+            err = e;
+            throw e;
+          }
         });
 
         assertEquals(err, t.Error);
