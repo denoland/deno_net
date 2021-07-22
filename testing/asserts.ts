@@ -644,7 +644,7 @@ export async function assertThrowsAsync<T = void>(
     }
     if (ErrorClass && !(e instanceof ErrorClass)) {
       msg =
-        `Expected error to be instance of "${ErrorClass.name}", but got "${e.name}"${
+        `Expected error to be instance of "${ErrorClass.name}", but was "${e.constructor.name}"${
           msg ? `: ${msg}` : "."
         }`;
       throw new AssertionError(msg);
