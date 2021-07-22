@@ -10,10 +10,12 @@ import { Selector } from "./types.ts";
  *
  * Example:
  *
- * ```typescript
+ * ```ts
+ * import { mapKeys } from "./map_keys.ts";
+ *
  * const counts = { a: 5, b: 3, c: 8 }
  *
- * console.assert(mapKeys(counts, it => it.toUppercase()) === {
+ * console.assert(mapKeys(counts, it => it.toUpperCase()) === {
  *     A: 5,
  *     B: 3,
  *     C: 8,

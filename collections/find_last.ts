@@ -7,7 +7,9 @@ import { Predicate } from "./types.ts";
  *
  * Example:
  *
- * ```typescript
+ * ```ts
+ * import { findLast } from "./find_last.ts";
+ *
  * const numbers = [ 4, 2, 7 ]
  * const lastEvenNumber = findLast(numbers, it => it % 2 === 0)
  *

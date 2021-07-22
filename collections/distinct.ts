@@ -5,7 +5,9 @@
  *
  * Example:
  *
- * ```typescript
+ * ```ts
+ * import { distinct } from "./distinct.ts";
+ *
  * const numbers = [ 3, 2, 5, 2, 5 ]
  * const distinctNumbers = distinct(numbers)
  *

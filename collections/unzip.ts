@@ -6,12 +6,15 @@
  *
  * Example:
  *
- * ```typescript
+ * ```ts
+ * import { unzip } from "./unzip.ts";
+ *
  * const parents = [
  *     [ 'Maria', 'Jeff' ],
  *     [ 'Anna', 'Kim' ],
  *     [ 'John', 'Leroy' ],
- * ]
+ * ] as [string, string][];
+ *
  * const [ moms, dads ] = unzip(parents)
  *
  * console.assert(moms === [ 'Maria', 'Anna', 'John' ])

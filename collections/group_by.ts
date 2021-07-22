@@ -8,12 +8,18 @@ import { Grouping, Selector } from "./types.ts";
  *
  * Example:
  *
- * ```typescript
- * const people = [
+ * ```ts
+ * import { groupBy } from "./group_by.ts";
+ *
+ * type Person = {
+ *   name: string;
+ * };
+ *
+ * const people: Person[] = [
  *     { name: 'Anna' },
  *     { name: 'Arnold' },
  *     { name: 'Kim' },
- * ]
+ * ];
  * const peopleByFirstLetter = groupBy(people, it => it.name.charAt(0))
  *
  * console.assert(peopleByFirstLetter === {

@@ -7,10 +7,12 @@ import { filterInPlace } from "./_utils.ts";
  *
  * Example:
  *
- * ```typescript
+ * ```ts
+ * import { intersect } from "./intersect.ts";
+ *
  * const lisaInterests = [ 'Cooking', 'Music', 'Hiking' ]
  * const kimInterests = [ 'Music', 'Tennis', 'Cooking' ]
- * const commonInterests = intersectTest(lisaInterests, kimInterests)
+ * const commonInterests = intersect(lisaInterests, kimInterests)
  *
  * console.assert(commonInterests === [ 'Cooking', 'Music' ])
  * ```

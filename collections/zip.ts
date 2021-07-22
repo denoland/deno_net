@@ -5,7 +5,9 @@
  *
  * Example:
  *
- * ```typescript
+ * ```ts
+ * import { zip } from "./zip.ts";
+ *
  * const numbers = [ 1, 2, 3, 4 ]
  * const letters = [ 'a', 'b', 'c', 'd' ]
  * const pairs = zip(numbers, letters)

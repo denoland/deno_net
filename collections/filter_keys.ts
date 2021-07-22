@@ -7,7 +7,9 @@ import { Predicate } from "./types.ts";
  *
  * Example:
  *
- * ```typescript
+ * ```ts
+ * import { filterKeys } from "./filter_keys.ts";
+ *
  * const menu = {
  *     'Salad': 11,
  *     'Soup': 8,

@@ -188,6 +188,9 @@ export function getCookies(req: { headers: Headers }): Record<string, string> {
  * Example:
  *
  * ```ts
+ * import { setCookie } from "https://deno.land/std/http/cookie.ts";
+ *
+ * const response = new Response("");
  * setCookie(response, { name: 'deno', value: 'runtime',
  *   httpOnly: true, secure: true, maxAge: 2, domain: "deno.land" });
  * ```

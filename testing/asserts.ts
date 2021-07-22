@@ -224,9 +224,11 @@ export function assert(expr: unknown, msg = ""): asserts expr {
  *
  * Type parameter can be specified to ensure values under comparison have the same type.
  * For example:
- *```ts
- *assertEquals<number>(1, 2)
- *```
+ * ```ts
+ * import { assertEquals } from "./asserts.ts";
+ *
+ * assertEquals<number>(1, 2)
+ * ```
  */
 export function assertEquals(
   actual: unknown,
@@ -268,9 +270,11 @@ export function assertEquals(
  *
  * Type parameter can be specified to ensure values under comparison have the same type.
  * For example:
- *```ts
- *assertNotEquals<number>(1, 2)
- *```
+ * ```ts
+ * import { assertNotEquals } from "./asserts.ts";
+ *
+ * assertNotEquals<number>(1, 2)
+ * ```
  */
 export function assertNotEquals(
   actual: unknown,
@@ -307,7 +311,10 @@ export function assertNotEquals(
 /**
  * Make an assertion that `actual` and `expected` are strictly equal. If
  * not then throw.
+ *
  * ```ts
+ * import { assertStrictEquals } from "./asserts.ts";
+ *
  * assertStrictEquals(1, 2)
  * ```
  */
@@ -368,7 +375,10 @@ export function assertStrictEquals(
 /**
  * Make an assertion that `actual` and `expected` are not strictly equal.
  * If the values are strictly equal then throw.
+ *
  * ```ts
+ * import { assertNotStrictEquals } from "./asserts.ts";
+ *
  * assertNotStrictEquals(1, 1)
  * ```
  */
@@ -435,9 +445,12 @@ export function assertStringIncludes(
  *
  * Type parameter can be specified to ensure values under comparison have the same type.
  * For example:
- *```ts
- *assertArrayIncludes<number>([1, 2], [2])
- *```
+ *
+ * ```ts
+ * import { assertArrayIncludes } from "./asserts.ts";
+ *
+ * assertArrayIncludes<number>([1, 2], [2])
+ * ```
  */
 export function assertArrayIncludes(
   actual: ArrayLike<unknown>,

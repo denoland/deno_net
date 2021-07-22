@@ -7,7 +7,9 @@ import { Selector } from "./types.ts";
  *
  * Example:
  *
- * ```typescript
+ * ```ts
+ * import { distinctBy } from "./distinct_by.ts";
+ *
  * const names = [ 'Anna', 'Kim', 'Arnold', 'Kate' ]
  * const exampleNamesByFirstLetter = distinctBy(names, it => it.charAt(0))
  *

@@ -5,7 +5,9 @@
  *
  * Example:
  *
- * ```typescript
+ * ```ts
+ * import { chunked } from "./chunked.ts";
+ *
  * const words = [ 'lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consetetur', 'sadipscing' ]
  * const chunks = chunked(words, 3)
  *

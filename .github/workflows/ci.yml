@@ -31,7 +31,7 @@ jobs:
           deno-version: ${{ matrix.deno }}
 
       - name: Run tests
-        run: deno test --unstable --allow-all --coverage=./cov
+        run: deno test --doc --unstable --allow-all --coverage=./cov
 
       - name: Type check browser compatible modules
         shell: bash
@@ -40,18 +40,23 @@ jobs:
 
       - name: Generate lcov
         shell: bash
+        # TODO(kt3k): Excludes ubuntu for now because it panics while processing io/util.ts
+        # See https://github.com/denoland/deno/issues/10420
+        if: matrix.os != 'ubuntu-latest'
         # excludes tests, testdata, and generated sources from coverage report
         run: |
           deno coverage ./cov/ --lcov --exclude="test\\.(ts|js)|wasm\\.js|testdata|node/_tools|node/_module/cjs|node_modules" > cov.lcov
 
       - name: Upload coverage
         uses: codecov/codecov-action@v1
+        if: matrix.os != 'ubuntu-latest'
         with:
           name: ${{ matrix.os }}-${{ matrix.deno }}
           files: cov.lcov
 
       - name: Remove coverage report
         shell: bash
+        if: matrix.os != 'ubuntu-latest'
         run: |
           rm -rf ./cov/
           rm cov.lcov
